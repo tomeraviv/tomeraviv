@@ -14,8 +14,7 @@ export default function Home()
 				<title>Tomer Aviv</title>
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
-			<main
-				className="flex min-h-screen flex-col items-center justify-center bg-white dark:bg-gray-950">
+			<main className="flex min-h-screen flex-col items-center justify-center bg-white dark:bg-gray-950">
 				<div className="container flex flex-col items-center justify-center gap-6 sm:gap-12 px-4 py-16 ">
 
 					<h1 className="text-lg font-extrabold tracking-tight text-black dark:text-white sm:text-3xl">
@@ -25,7 +24,8 @@ export default function Home()
 
 					<div className="grid grid-cols-1 w-60 gap-2 sm:w-80 md:gap-2">
 						<MyLink text="Résumé" href="/cv"/>
-						<MyLink text="Contact" href="/contact"/>
+						<MyLink text="LinkedIn" href="https://www.linkedin.com/in/tomer-aviv-link/" />
+						<MyLink text="Send Me A Message" href="/contact"/>
 					</div>
 
 					<div className="flex flex-col items-center gap-2">
@@ -34,7 +34,7 @@ export default function Home()
 						</p>
 						<AuthShowcase/>
 					</div>
-
+					<div className="h-32 w-full" />
 				</div>
 			</main>
 		</>
