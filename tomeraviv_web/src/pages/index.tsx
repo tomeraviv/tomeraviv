@@ -3,6 +3,7 @@ import Head from "next/head";
 import {api} from "~/utils/api";
 import {UserCircleIcon} from "@heroicons/react/24/solid";
 import {MyLink} from "~/components/MyLink";
+import RiveCatAnimated from "~/components/riveCatAnimated";
 
 export default function Home()
 {
@@ -15,16 +16,16 @@ export default function Home()
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 			<main className="flex min-h-screen flex-col items-center justify-center bg-white dark:bg-gray-950">
-				<div className="container flex flex-col items-center justify-center gap-6 sm:gap-12 px-4 py-16 ">
-
+				<div className="container flex flex-col items-center justify-center gap-6 px-4 py-16 sm:gap-12 ">
 					<h1 className="text-lg font-extrabold tracking-tight text-black dark:text-white sm:text-3xl">
 						<UserCircleIcon className="block text-lg text-black dark:text-white"/>
 						Tomer Aviv
 					</h1>
 
-					<div className="grid grid-cols-1 w-60 gap-2 sm:w-80 md:gap-2">
+					<div className="grid w-60 grid-cols-1 gap-2 sm:w-80 md:gap-2">
+						<RiveCatAnimated />
 						<MyLink text="Résumé" href="/cv"/>
-						<MyLink text="LinkedIn" href="https://www.linkedin.com/in/tomer-aviv-link/" />
+						<MyLink text="LinkedIn" href="https://www.linkedin.com/in/tomer-aviv-link/"/>
 						<MyLink text="Send Me A Message" href="/contact"/>
 					</div>
 
@@ -34,7 +35,7 @@ export default function Home()
 						</p>
 						<AuthShowcase/>
 					</div>
-					<div className="h-32 w-full" />
+					<div className="h-32 w-full"/>
 				</div>
 			</main>
 		</>

@@ -9,7 +9,7 @@ web: ## Run the development web server.
 	cd tomeraviv_web && pnpm run dev
 
 
-webb: ## Build and run the web server.
+webbuild: ## Build and run the web server.
 	cd tomeraviv_web && pnpm run build && pnpm run start
 
 
