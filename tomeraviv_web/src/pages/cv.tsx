@@ -1,6 +1,6 @@
 import Head from "next/head";
 import {UserCircleIcon} from "@heroicons/react/24/solid";
-import {MyLink} from "~/components/MyLink";
+import {MyLink} from "~/components/myLink";
 
 export default function Home()
 {

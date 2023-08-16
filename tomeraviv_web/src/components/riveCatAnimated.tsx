@@ -29,7 +29,7 @@ export default function RiveCatAnimated()
 		};
 	}, [canvas]);
 
-	const className = "w-24 h-24 pointer-events-none -mt-[72px] ml-[160px] sm:w-32 sm:h-32 absolute -mt-24 sm:ml-52 sm:-mt-24 sm:ml-52";
+	const className = "pointer-events-none absolute -mt-24 h-24 w-24 -mt-[72px] ml-[160px] sm:-mt-24 sm:ml-52 sm:h-32 sm:w-32";
 
 	// Shows a tiny base64 loading image until rive is fully loaded.
 	return (
