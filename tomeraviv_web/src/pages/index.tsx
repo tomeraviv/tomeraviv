@@ -23,7 +23,6 @@ export default function Home()
 						<UserCircleIcon className="block text-lg text-black dark:text-white"/>
 						Tomer Aviv
 					</h1>
-
 					<div className="grid w-60 grid-cols-1 gap-2 sm:w-80 md:gap-2">
 						<RiveCatAnimated/>
 						<MyLink text="Résumé" href="/cv"/>
