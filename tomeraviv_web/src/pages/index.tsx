@@ -15,7 +15,7 @@ export default function Home()
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 
-			<GitHubLink repo_url="https://github.com/tomeraviv/test"/>
+			<GitHubLink repo_url="https://github.com/tomeraviv/tomeraviv"/>
 
 			<main className="flex min-h-screen flex-col items-center justify-center dark:bg-gray-950">
 				<div className="container flex flex-grow flex-col items-center justify-center gap-6 px-4 sm:gap-12">
