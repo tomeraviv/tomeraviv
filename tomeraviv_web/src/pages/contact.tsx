@@ -11,7 +11,7 @@ export default function Home()
 	return (
 		<>
 			<Head>
-				<title>Tomer Aviv</title>
+				<title>Tomer Aviv - Contact</title>
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 
