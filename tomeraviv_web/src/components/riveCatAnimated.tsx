@@ -1,14 +1,14 @@
-"use client";
-
+import Image from 'next/image'
 import {useRive} from "@rive-app/react-canvas";
-import {useEffect} from "react";
-import cat_placeholder from "../../public/rive/cat_placeholder";
+import {useEffect, useRef} from "react";
+import cat_placeholder from "../../public/rive/cat/cat_placeholder";
+
 
 export default function RiveCatAnimated()
 {
 	const {rive, RiveComponent, canvas} = useRive({
 		autoplay: true,
-		src: "/rive/cat.riv",
+		src: "/rive/cat/cat.riv",
 		stateMachines: "State Machine 1",
 	});
 
@@ -34,7 +34,7 @@ export default function RiveCatAnimated()
 	// Shows a tiny base64 loading image until rive is fully loaded.
 	return (
 		<>
-			{!rive && <img src={cat_placeholder} alt={"Loading..."} className={className + " blur-sm"}/>}
+			{!rive && <Image src={'/rive/cat/cat.png'} width={128} height={128} placeholder={cat_placeholder} alt={"Loading..."} className={className}/>}
 			<RiveComponent aria-label="Animated cat icon" className={className}/>
 		</>
 	);

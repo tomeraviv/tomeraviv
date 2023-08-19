@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "audit": "npm audit --omit=dev",
+    "check-updates": "npm audit --omit=dev && npm-check-updates",
+    "do-updates": "read -p '# Run ncu -u to upgrade package.json?\n\n Continue? [y/N] ' -n 1 -r && echo && [[ $REPLY =~ ^[Yy]$ ]] && npm-check-updates -u",
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
@@ -18,7 +21,7 @@
     "@trpc/next": "^10.34.0",
     "@trpc/react-query": "^10.34.0",
     "@trpc/server": "^10.34.0",
-    "next": "^13.4.2",
+    "next": "^13.4.18",
     "next-auth": "^4.22.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
