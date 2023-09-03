@@ -35,7 +35,7 @@ export default function RiveCatAnimated()
 	return (
 		<>
 			{!rive && <Image src={'/rive/cat/cat.png'} width={128} height={128} placeholder={cat_placeholder} alt={"Loading..."} className={className}/>}
-			<RiveComponent aria-label="Animated cat icon" className={className}/>
+			<RiveComponent aria-label="Animated cat icon"  className={className}/>
 		</>
 	);
 }

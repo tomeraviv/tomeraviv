@@ -18,7 +18,7 @@ function GitHubIcon()
 export function GitHubLink({repo_url}: { repo_url: string })
 {
 	return (
-		<Link className="rounded-2xl bg-gray-400/20 p-3 text-sm hover:bg-gray-400/40 active:bg-gray-400/60 dark:bg-gray-400/20 dark:text-white dark:hover:bg-gray-200/30"
+		<Link className="btn"
 			  href={repo_url} target="_blank" aria-label="View on GitHub">
 			<span>View on GitHub <GitHubIcon/></span>
 		</Link>

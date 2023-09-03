@@ -4,6 +4,7 @@ import {MyLink} from "~/components/myLink";
 import RiveCatAnimated from "~/components/riveCatAnimated";
 import {GitHubLink} from "~/components/gitHubLink";
 import {ToggleDarkMode} from "~/components/toggleDarkMode";
+import * as process from "process";
 
 export default function Home()
 {
@@ -20,22 +21,28 @@ export default function Home()
 			</div>
 
 
-			<main className="flex min-h-screen flex-col items-center justify-center dark:bg-gray-950">
-				<div className="container flex flex-grow flex-col items-center justify-center gap-6 px-4 sm:gap-12">
-					<h1 className="text-lg font-extrabold tracking-tight text-black dark:text-white sm:text-3xl">
+			<div className="flex min-h-screen flex-col items-center justify-center dark:bg-gray-950">
+				<div className="container flex flex-grow flex-col items-center justify-center gap-6 px-4 sm:gap-16">
+					<h1 className="text-2xl font-extrabold tracking-tight text-black dark:text-white sm:text-4xl">
 						<UserCircleIcon className="block text-lg text-black dark:text-white"/>
 						Tomer Aviv
 					</h1>
 
-					<div className="grid w-60 grid-cols-1 gap-2 sm:w-80 md:gap-2">
+					<nav className="grid w-60 grid-cols-1 gap-2 sm:w-80 md:gap-2">
 						<RiveCatAnimated/>
 						<MyLink text="LinkedIn" href="https://www.linkedin.com/in/tomer-aviv-link/" is_external={true}/>
 						<MyLink text="Oniverkita" href="https://www.oniverkita.co.il/" is_external={true}/>
 						<MyLink text="Send Me A Message" href="/contact"/>
-					</div>
+					</nav>
+
+					{/* add footer */}
+					<footer className="text-sm text-center text-gray-500 dark:text-gray-400">
+						© Rendered at {new Date().toString()} by {process.env.VERCEL_REGION ?? "VERCEL"}
+					</footer>
+
 				</div>
 				<div className="h-full w-full flex-grow"/>
-			</main>
+			</div>
 		</>
 	);
 }

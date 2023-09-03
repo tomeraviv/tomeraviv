@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .btn {
+        @apply rounded-2xl bg-stone-400/25 p-3 text-sm text-black hover:bg-stone-300 active:translate-y-0.5 active:bg-amber-500/70 dark:bg-stone-400/30 dark:text-white dark:hover:bg-stone-400/60 dark:active:bg-yellow-500;
+    }
+}
