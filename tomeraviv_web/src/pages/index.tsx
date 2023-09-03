@@ -6,7 +6,17 @@ import {GitHubLink} from "~/components/gitHubLink";
 import {ToggleDarkMode} from "~/components/toggleDarkMode";
 import * as process from "process";
 
-export default function Home()
+export function getStaticProps()
+{
+	return {
+		props: {
+			renderDate: new Date().toString(),
+			renderInstance: process.env.VERCEL_REGION ?? "VERCEL"
+		}
+	};
+}
+
+export default function Home({renderDate, renderInstance}: { renderDate: string, renderInstance: string })
 {
 	return (
 		<>
@@ -15,7 +25,7 @@ export default function Home()
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 
-			<div className="absolute top-0 m-3 gap-2 right-0 flex items-center">
+			<div className="absolute top-0 right-0 m-3 flex items-center gap-2">
 				<ToggleDarkMode/>
 				<GitHubLink repo_url="https://github.com/tomeraviv/tomeraviv"/>
 			</div>
@@ -35,9 +45,13 @@ export default function Home()
 						<MyLink text="Send Me A Message" href="/contact"/>
 					</nav>
 
-					{/* add footer */}
-					<footer className="text-sm text-center text-gray-500 dark:text-gray-400">
-						© Rendered at {new Date().toString()} by {process.env.VERCEL_REGION ?? "VERCEL"}
+					<footer className="gap-1 flex text-sm text-gray-500 dark:text-gray-500">
+						<span>© Tomer Aviv</span>
+						- Rendered at
+						<span className="text-orange-800 dark:text-orange-300/70">{renderDate}</span> by
+						<a className="text-orange-800 dark:text-orange-300/70" href="https://vercel.com" target="_blank">{renderInstance}</a>
+						using
+						<a className="text-orange-800 dark:text-orange-300/70" href="https://nextjs.org" target="_blank">Next.js</a>
 					</footer>
 
 				</div>
