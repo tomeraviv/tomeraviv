@@ -18,8 +18,8 @@ export default function RiveCatAnimated()
 		const onMouseMove = (e: MouseEvent) => canvas?.dispatchEvent(new MouseEvent("mousemove", {clientX: e.clientX, clientY: e.clientY}));
 		const onTouchMove = (e: TouchEvent) => canvas?.dispatchEvent(new TouchEvent("touchmove", {touches: [e.touches[0]!]}));
 
-		window.addEventListener("mousemove", onMouseMove);
-		window.addEventListener("touchmove", onTouchMove);
+		window.addEventListener("mousemove", onMouseMove,  {passive: true});
+		window.addEventListener("touchmove", onTouchMove,  {passive: true});
 
 		// When the component unmounts, remove the event listeners.
 		return () =>
