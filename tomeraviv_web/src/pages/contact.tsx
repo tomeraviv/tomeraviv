@@ -1,36 +1,42 @@
-import {signIn, signOut, useSession} from "next-auth/react";
-import Head from "next/head";
-import {api} from "~/utils/api";
-import {UserCircleIcon} from "@heroicons/react/24/solid";
 import {MyLink} from "~/components/myLink";
 import RiveCatAnimated from "~/components/riveCatAnimated";
-import {GitHubLink} from "~/components/gitHubLink";
+import {ArrowLeftCircleIcon, EnvelopeIcon} from "@heroicons/react/20/solid";
+import {Layout} from "~/components/page";
+import { getStaticProps } from "./index";
 
-export default function Home()
+export default function Contact({renderProps}: { renderProps: { renderDate: string, renderTime: string, renderInstance: string } })
 {
 	return (
-		<>
-			<Head>
-				<title>Tomer Aviv - Contact</title>
-				<link rel="icon" href="/favicon.ico"/>
-			</Head>
-
-			<GitHubLink repo_url="https://github.com/tomeraviv/tomeraviv"/>
-
-			<main className="flex min-h-screen flex-col items-center justify-center dark:bg-gray-950">
-				<div className="container flex flex-grow flex-col items-center justify-center gap-6 px-4 sm:gap-12">
-					<h1 className="text-lg font-extrabold tracking-tight text-black dark:text-white sm:text-3xl">
-						<UserCircleIcon className="block text-lg text-black dark:text-white"/>
-						Tomer Aviv
-					</h1>
-
-					<div className="grid w-60 grid-cols-1 gap-2 sm:w-80 md:gap-2">
-						<RiveCatAnimated/>
-						<MyLink text="Back" href="/"/>
-					</div>
-				</div>
-				<div className="flex-grow w-full h-full"/>
-			</main>
-		</>
+		<Layout renderProps={renderProps}>
+			<div className="absolute pointer-events-none -mt-[242px] ml-[192px] sm:-mt-[152px] sm:ml-60">
+				<RiveCatAnimated/>
+			</div>
+			<div className="grid w-60 grid-cols-1 gap-2 sm:w-80 md:gap-2">
+				<ContactForm/>
+				<MyLink text="Back" href="/" icon={<ArrowLeftCircleIcon/>}/>
+			</div>
+		</Layout>
 	);
 }
+
+function ContactForm()
+{
+	// Render a contact form.
+	return (
+		<form className="flex flex-col gap-2" method="POST">
+			<span className="p-2 text-lg font-bold">Send me a message</span>
+			<input type="text" name="name" placeholder="Name*" required={true}
+				   className="w-full rounded border-gray-300 p-2 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"/>
+
+			<input type="email" name="email" placeholder="Email*" required={true}
+				   className="w-full rounded border-gray-300 p-2 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"/>
+
+			<textarea name="message" placeholder="Message*" required={true}
+					  className="w-full rounded border-gray-300 p-2 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"/>
+			<span className="p-1 text-sm text-stone-600/50 dark:text-stone-200/50">* Required</span>
+			<button type="submit" className="text-lg btn"><EnvelopeIcon className="mr-2 inline h-5 w-5 -mt-0.5"/>Send</button>
+		</form>
+	);
+}
+
+export { getStaticProps };
