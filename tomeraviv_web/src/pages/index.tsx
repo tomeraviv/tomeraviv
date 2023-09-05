@@ -11,7 +11,7 @@ export function getStaticProps()
 	return {
 		props: {
 			renderDate: new Date().toString(),
-			renderInstance: process.env.VERCEL_REGION ?? "VERCEL"
+			renderInstance: process.env.VERCEL_REGION ?? "AWS @ VERCEL",
 		}
 	};
 }
@@ -45,12 +45,10 @@ export default function Home({renderDate, renderInstance}: { renderDate: string,
 						<MyLink text="Send Me A Message" href="/contact"/>
 					</nav>
 
-					<footer className="gap-1 flex text-sm text-gray-500 dark:text-gray-500">
-						<span>© Tomer Aviv</span>
-						- Rendered at
+					<footer className="flex flex-wrap justify-center gap-1 text-sm text-gray-500 dark:text-gray-500">
+						© Tomer Aviv - Rendered at
 						<span className="text-orange-800 dark:text-orange-300/70">{renderDate}</span> by
-						<a className="text-orange-800 dark:text-orange-300/70" href="https://vercel.com" target="_blank">{renderInstance}</a>
-						using
+						<a className="text-orange-800 dark:text-orange-300/70" href="https://vercel.com" target="_blank">{renderInstance}</a> using
 						<a className="text-orange-800 dark:text-orange-300/70" href="https://nextjs.org" target="_blank">Next.js</a>
 					</footer>
 
