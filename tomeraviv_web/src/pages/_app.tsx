@@ -12,7 +12,7 @@ const nextFont = Raleway({
 	subsets: ['latin'],
 	display: 'fallback',
 	variable: '--font-raleway',
-	fallback: ['system-ui', 'arial'],
+	fallback: ['Raleway', 'system-ui', 'arial'],	// 'Raleway': This will show our inline base64 font quickly before the google font loads.
 	adjustFontFallback: true
 });
 
@@ -22,7 +22,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
 													 }) =>
 {
 	return (
-			<main className={nextFont.className} style={{fontFamily: nextFont.style.fontFamily + ', Raleway'}}>
+			<main className={nextFont.className}>
 				<Component {...pageProps} />
 			</main>
 	);
