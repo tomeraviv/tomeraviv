@@ -34,7 +34,7 @@ export function getStaticProps()
 				renderTime: new Date().toTimeString(),
 				renderInstance: process.env.VERCEL_REGION ?? "AWS @ VERCEL",
 			},
-			env: process.env.VERCE_ENV
+			env: process.env.NEXT_PUBLIC_VERCEL_ENV
 		}
 	};
 }
