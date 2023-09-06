@@ -1,6 +1,6 @@
 {
   "name": "tomeraviv_web",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "audit": "pnpm audit",

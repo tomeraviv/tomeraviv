@@ -11,6 +11,7 @@ const nextFont = Raleway({
 	weight: ['400', "700"],
 	subsets: ['latin'],
 	display: 'fallback',
+	variable: '--font-raleway',
 	fallback: ['system-ui', 'arial'],
 	adjustFontFallback: true
 });
@@ -21,7 +22,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
 													 }) =>
 {
 	return (
-			<main className={nextFont.className}>
+			<main className={nextFont.className} style={{fontFamily: nextFont.style.fontFamily + ', Raleway'}}>
 				<Component {...pageProps} />
 			</main>
 	);

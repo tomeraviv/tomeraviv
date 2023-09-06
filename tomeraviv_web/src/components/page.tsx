@@ -1,4 +1,6 @@
 import {Avatar} from "~/components/avatar";
+import {ToggleDarkMode} from "~/components/toggleDarkMode";
+import {GitHubLink} from "~/components/gitHubLink";
 
 export function Footer({renderProps}: { renderProps: { renderDate: string, renderTime: string, renderInstance: string } })
 {
@@ -16,13 +18,19 @@ export function Layout({children, renderProps}: {
 })
 {
 	return (
-		<div className="flex min-h-screen flex-col items-center justify-center dark:bg-gray-950">
-			<div className="container flex flex-grow flex-col items-center justify-center gap-6 px-4 sm:gap-8">
-				<Avatar name="Tomer Aviv"/>
-				{children}
-				<Footer renderProps={renderProps}/>
+		<>
+			<div className="absolute top-0 right-0 m-3 flex items-center gap-2">
+				<ToggleDarkMode/>
+				<GitHubLink repo_url="https://github.com/tomeraviv/tomeraviv"/>
 			</div>
-			<div className="h-full w-full flex-grow"/>
-		</div>
+			<div className="flex min-h-screen flex-col items-center justify-center dark:bg-gray-950">
+				<div className="container flex flex-grow flex-col items-center justify-center gap-6 px-4 sm:gap-8">
+					<Avatar name="Tomer Aviv"/>
+					{children}
+					<Footer renderProps={renderProps}/>
+				</div>
+				<div className="h-full w-full flex-grow"/>
+			</div>
+		</>
 	);
 }
