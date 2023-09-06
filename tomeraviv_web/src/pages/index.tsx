@@ -5,7 +5,7 @@ import {Layout} from "~/components/page";
 import Head from "next/head";
 
 
-export default function Home({renderProps}: { renderProps: { renderDate: string, renderTime: string, renderInstance: string } })
+export default function Home({renderProps, env}: { renderProps: { renderDate: string, renderTime: string, renderInstance: string }, env: string })
 {
 	return (
 		<Layout renderProps={renderProps}>
@@ -19,7 +19,7 @@ export default function Home({renderProps}: { renderProps: { renderDate: string,
 				</div>
 				<MyLink text="LinkedIn" href="https://www.linkedin.com/in/tomer-aviv-link/" is_external={true}/>
 				<MyLink text="Oniverkita" href="https://www.oniverkita.co.il/" is_external={true}/>
-				{ process.env.VERCE_ENV !== "production" && <MyLink text="Send Me A Message" href="/contact"/>}
+				{ env !== "production" && <MyLink text="Send Me A Message" href="/contact"/>}
 			</nav>
 		</Layout>
 	);
@@ -33,7 +33,8 @@ export function getStaticProps()
 				renderDate: new Date().toDateString(),
 				renderTime: new Date().toTimeString(),
 				renderInstance: process.env.VERCEL_REGION ?? "AWS @ VERCEL",
-			}
+			},
+			env: process.env.VERCE_ENV
 		}
 	};
 }
