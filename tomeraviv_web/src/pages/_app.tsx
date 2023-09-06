@@ -8,12 +8,11 @@ import "~/styles/globals.css";
 
 // If loading a variable font, you don't need to specify the font weight
 const nextFont = Raleway({
+	fallback: ['Raleway', 'system-ui', 'arial'],	// 'Raleway': This will show our inline base64 font quickly before the local Google font file loads.
+	adjustFontFallback: false,						// allows custom 'fallback'.
 	weight: ['400', "700"],
-	subsets: ['latin'],
-	display: 'fallback',
-	variable: '--font-raleway',
-	fallback: ['Raleway', 'system-ui', 'arial'],	// 'Raleway': This will show our inline base64 font quickly before the google font loads.
-	adjustFontFallback: true
+	display: 'swap',
+	subsets: ['latin']
 });
 
 const MyApp: AppType<{ session: Session | null }> = ({

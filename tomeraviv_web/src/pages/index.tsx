@@ -19,7 +19,7 @@ export default function Home({renderProps}: { renderProps: { renderDate: string,
 				</div>
 				<MyLink text="LinkedIn" href="https://www.linkedin.com/in/tomer-aviv-link/" is_external={true}/>
 				<MyLink text="Oniverkita" href="https://www.oniverkita.co.il/" is_external={true}/>
-				<MyLink text="Send Me A Message" href="/contact"/>
+				{/*<MyLink text="Send Me A Message" href="/contact"/>*/}
 			</nav>
 		</Layout>
 	);
