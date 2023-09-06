@@ -5,11 +5,11 @@
 default: help
 
 
-d: ## Run the development web server.
+dev: ## Run the development web server.
 	cd tomeraviv_web && pnpm run dev
 
 
-b: ## Build and run the web server.
+build: ## Build and run the web server.
 	cd tomeraviv_web && pnpm run build && pnpm run start
 
 

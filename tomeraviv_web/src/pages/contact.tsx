@@ -2,12 +2,16 @@ import {MyLink} from "~/components/myLink";
 import RiveCatAnimated from "~/components/riveCatAnimated";
 import {ArrowLeftCircleIcon, EnvelopeIcon} from "@heroicons/react/20/solid";
 import {Layout} from "~/components/page";
-import { getStaticProps } from "./index";
+import {getStaticProps} from "./index";
+import Head from "next/head";
 
 export default function Contact({renderProps}: { renderProps: { renderDate: string, renderTime: string, renderInstance: string } })
 {
 	return (
 		<Layout renderProps={renderProps}>
+			<Head>
+				<title>Tomer Aviv - Contact</title>
+			</Head>
 			<div className="absolute pointer-events-none -mt-[242px] ml-[192px] sm:-mt-[152px] sm:ml-60">
 				<RiveCatAnimated/>
 			</div>
@@ -39,4 +43,4 @@ function ContactForm()
 	);
 }
 
-export { getStaticProps };
+export {getStaticProps};

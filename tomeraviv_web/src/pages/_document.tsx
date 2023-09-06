@@ -7,7 +7,6 @@ export default function Document()
 	return (
 		<Html lang="en-us" className="bg-light dark:bg-dark">
 			<Head>
-				<title>Tomer Aviv</title>
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 			<body className="">

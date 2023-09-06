@@ -21,12 +21,11 @@ const MyApp: AppType<{ session: Session | null }> = ({
 													 }) =>
 {
 	return (
-		<SessionProvider session={session}>
 			<main className={nextFont.className}>
 				<Component {...pageProps} />
 			</main>
-		</SessionProvider>
 	);
 };
 
-export default api.withTRPC(MyApp);
+export default MyApp;
+// export default api.withTRPC(MyApp);
