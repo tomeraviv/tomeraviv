@@ -5,7 +5,7 @@ import {Layout} from "~/components/page";
 import {getStaticProps} from "./index";
 import Head from "next/head";
 
-export default function Contact({renderProps}: { renderProps: { renderDate: string, renderTime: string, renderInstance: string } })
+export default function Contact({renderProps}: { renderProps: { renderDate: string, renderTime: string, renderInstance: string }})
 {
 	return (
 		<Layout renderProps={renderProps}>

@@ -4,7 +4,6 @@ import * as process from "process";
 import {Layout} from "~/components/page";
 import Head from "next/head";
 
-
 export default function Home({renderProps, env}: { renderProps: { renderDate: string, renderTime: string, renderInstance: string }, env: string })
 {
 	return (
@@ -19,11 +18,12 @@ export default function Home({renderProps, env}: { renderProps: { renderDate: st
 				</div>
 				<MyLink text="LinkedIn" href="https://www.linkedin.com/in/tomer-aviv-link/" is_external={true}/>
 				<MyLink text="Oniverkita" href="https://www.oniverkita.co.il/" is_external={true}/>
-				{ env !== "production" && <MyLink text="Send Me A Message" href="/contact"/>}
+				{env !== "production" && <MyLink text="Send Me A Message" href="/contact"/>}
 			</nav>
 		</Layout>
 	);
 }
+
 
 export function getStaticProps()
 {
@@ -34,7 +34,7 @@ export function getStaticProps()
 				renderTime: new Date().toTimeString(),
 				renderInstance: process.env.VERCEL_REGION ?? "AWS @ VERCEL",
 			},
-			env: process.env.NEXT_PUBLIC_VERCEL_ENV
+			env: process.env.NEXT_PUBLIC_VERCEL_ENV ?? "development"
 		}
 	};
 }

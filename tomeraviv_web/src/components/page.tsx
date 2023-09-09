@@ -5,7 +5,7 @@ import {GitHubLink} from "~/components/gitHubLink";
 export function Footer({renderProps}: { renderProps: { renderDate: string, renderTime: string, renderInstance: string } })
 {
 	return <footer className="flex flex-wrap justify-center gap-1 text-sm text-gray-500 dark:text-gray-500">
-		© Tomer Aviv - Rendered at
+		© Tomer Aviv - Rendered
 		<span title={renderProps.renderTime} className="text-orange-800 dark:text-orange-300/70">{renderProps.renderDate}</span> by
 		<a className="text-orange-800 dark:text-orange-300/70" href="https://vercel.com" target="_blank">{renderProps.renderInstance}</a> using
 		<a className="text-orange-800 dark:text-orange-300/70" href="https://nextjs.org" target="_blank">Next.js</a>

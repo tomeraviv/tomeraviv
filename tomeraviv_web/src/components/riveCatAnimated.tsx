@@ -1,6 +1,8 @@
+"use client"
+
 import Image from 'next/image'
 import {useRive} from "@rive-app/react-canvas";
-import {useEffect, useRef} from "react";
+import {useEffect} from "react";
 import cat_placeholder from "../../public/rive/cat/cat_placeholder";
 
 
